@@ -1,0 +1,15 @@
+name: Backend Render Notify
+
+on:
+  push:
+    paths:
+      - "backend/**"
+      - "render.yaml"
+    branches: [main]
+
+jobs:
+  notify-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify on push to Render backend
+        run: echo "Backend code or render.yaml changed. Please check your Render service for auto deploy."

@@ -1,0 +1,15 @@
+name: Frontend Vercel Notify
+
+on:
+  push:
+    paths:
+      - "frontend/**"
+      - "vercel.json"
+    branches: [main]
+
+jobs:
+  notify-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify on push to Frontend/Vercel files
+        run: echo "Frontend code or vercel.json changed. Please check Vercel for auto deploy."
