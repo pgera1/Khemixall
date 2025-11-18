@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: kemixall-backend
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    autoDeploy: true
+    envVars:
+      - key: MONGO_URI
+        value: "mongodb+srv://parth.33gera_db_user:2R0zpg1vJFy7EtcS@cluster.mongodb.net/kemixall"
+      - key: STRIPE_SECRET_KEY
+        value: "sk_test_51NxxxxxTestKey"
+      - key: CLIENT_URL
+        value: "https://kemixall.vercel.app"
